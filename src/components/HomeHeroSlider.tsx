@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { HERO_SLIDES, HeroSlide } from '../data/portfolioData';
 import { PortfolioPage } from './Header';
 import { ArrowLeft, ArrowRight, Terminal, Footprints, PenTool, Eraser } from 'lucide-react';
+import { DiaryBookSlide } from './DiaryBookSlide';
 
 interface HomeHeroSliderProps {
   onNavigate: (page: PortfolioPage) => void;
@@ -68,41 +69,19 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({ onNavigate, dark
             darkMode ? 'bg-[#262421]' : 'bg-stone-100'
           }`}
         >
-          {/* Slide Background Layers */}
-          <div className="absolute inset-0 w-full h-full overflow-hidden">
-            {HERO_SLIDES.map((slide, idx) => {
-              const isActive = currentSlideIndex === idx;
-              return (
-                <div
-                  key={slide.id}
-                  className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
-                    isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-                  }`}
-                >
-                  {/* Mobile portrait background (character in bottom half) */}
-                  <div
-                    className="sm:hidden absolute inset-0 w-full h-full bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url(${slide.bgImageMobile || slide.bgImage})`,
-                    }}
-                  />
-                  {/* Desktop / tablet widescreen background */}
-                  <div
-                    className="hidden sm:block absolute inset-0 w-full h-full bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url(${slide.bgImage}), url(${slide.fallbackImage})`,
-                    }}
-                  />
-                </div>
-              );
-            })}
-          </div>
+          {/* Slide Content: All Carousel Slides Rendered in the Diary Format */}
+          <DiaryBookSlide
+            slide={displayedSlide}
+            onNavigate={onNavigate}
+            darkMode={darkMode}
+            isWiping={isWiping}
+          />
 
           {/* Floating Tactile Side Navigation Arrows */}
           <button
             onClick={prevSlide}
             aria-label="Previous Slide"
-            className={`group absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all duration-200 active:scale-95 hover:scale-105 backdrop-blur-md cursor-pointer ${
+            className={`group absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all duration-200 active:scale-95 hover:scale-105 backdrop-blur-md cursor-pointer ${
               darkMode
                 ? 'bg-[#3a3630]/95 hover:bg-[#454038] text-stone-200 border-[#4d4840] shadow-md'
                 : 'bg-white/95 hover:bg-white text-stone-800 border-stone-200/90 shadow-lg hover:shadow-xl'
@@ -114,7 +93,7 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({ onNavigate, dark
           <button
             onClick={nextSlide}
             aria-label="Next Slide"
-            className={`group absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-40 w-11 h-11 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all duration-200 active:scale-95 hover:scale-105 backdrop-blur-md cursor-pointer ${
+            className={`group absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all duration-200 active:scale-95 hover:scale-105 backdrop-blur-md cursor-pointer ${
               darkMode
                 ? 'bg-[#3a3630]/95 hover:bg-[#454038] text-stone-200 border-[#4d4840] shadow-md'
                 : 'bg-white/95 hover:bg-white text-stone-800 border-stone-200/90 shadow-lg hover:shadow-xl'
@@ -122,79 +101,6 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({ onNavigate, dark
           >
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" />
           </button>
-
-          {/* Top-Left Positioned Editorial Paper Card over Sky Area */}
-          <div className="relative z-20 h-full w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-12 flex flex-col justify-start items-start pointer-events-none pt-10 sm:pt-14 md:pt-18">
-            <div
-              className={`relative w-full max-w-sm sm:max-w-md pointer-events-auto overflow-hidden rounded-2xl p-5 sm:p-6 shadow-xl border border-l-[5px] transition-all duration-300 bg-tactile-dots ${
-                displayedSlide.borderClass
-              } ${
-                darkMode
-                  ? 'bg-[#33302c] text-[#f5f0e8] border-[#4a453d]'
-                  : 'bg-white text-stone-900 border-stone-200/90'
-              }`}
-            >
-              {/* Rubber Eraser Sweeper Line */}
-              <div className={`eraser-sweeper ${isWiping ? 'eraser-active' : ''}`}>
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white rounded-full p-1 shadow-md flex items-center justify-center">
-                  <Eraser className="w-3 h-3" />
-                </div>
-              </div>
-
-              {/* Card Inner Content */}
-              <div className={`relative w-full ${isWiping ? 'eraser-wipe-out' : 'eraser-wipe-in'}`}>
-                {/* Act & Tag Row */}
-                <div className="flex items-center justify-between mb-3">
-                  <div
-                    className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-semibold text-[11px] uppercase tracking-wider transition-colors ${
-                      darkMode
-                        ? (displayedSlide.darkTagClass || 'bg-white/10 text-white border border-white/30')
-                        : displayedSlide.tagClass
-                    }`}
-                  >
-                    <span className={`w-2 h-2 rounded-full ${displayedSlide.dotColor} animate-pulse`} />
-                    <span className={darkMode ? 'text-white' : ''}>{displayedSlide.tag}</span>
-                  </div>
-                  <span
-                    className={`text-xs font-medium ${
-                      darkMode ? 'text-stone-300' : 'text-stone-500'
-                    }`}
-                  >
-                    {displayedSlide.act}
-                  </span>
-                </div>
-
-                {/* Headline */}
-                <h2
-                  className={`text-xl sm:text-2xl font-bold tracking-tight leading-snug mb-2.5 ${
-                    darkMode ? 'text-[#f5f0e8]' : 'text-stone-900'
-                  }`}
-                >
-                  {displayedSlide.headline}
-                </h2>
-
-                {/* Description Body */}
-                <p
-                  className={`text-xs sm:text-sm leading-relaxed mb-5 ${
-                    darkMode ? 'text-[#d6d0c4]' : 'text-stone-700'
-                  }`}
-                >
-                  {displayedSlide.body}
-                </p>
-
-                {/* CTA Button */}
-                <div className="flex items-center">
-                  <button
-                    onClick={() => onNavigate(displayedSlide.ctaPath)}
-                    className={`group inline-flex items-center gap-2 px-5 py-2 text-xs sm:text-sm font-bold rounded-full shadow-md hover:shadow-lg transition-all active:scale-[0.98] ${displayedSlide.btnClass} cursor-pointer`}
-                  >
-                    <span>{displayedSlide.ctaText}</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Bottom Slide Selector Pills */}
           <div className="absolute bottom-5 left-0 right-0 z-30 px-4 flex justify-center pointer-events-auto">

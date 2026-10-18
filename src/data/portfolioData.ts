@@ -1,10 +1,10 @@
-import developerWorkstationBg from '../assets/images/image1_code.jpg';
-import explorerRightBg from '../assets/images/image2_adv.jpg';
-import writerNightRightBg from '../assets/images/image3_journal.jpg';
+import developerWorkstationBg from '../assets/images/cabin_left_swivel_window_1792317845512.jpg';
+import explorerRightBg from '../assets/images/explorer_trekker_left_1792319323804.jpg';
+import writerNightRightBg from '../assets/images/writer_night_left_1792319322492.jpg';
 
-import image1Mobile from '../assets/images/image1_code_mobile.jpg';
-import image2Mobile from '../assets/images/image2_adv_mobile.jpg';
-import image3Mobile from '../assets/images/image3_journal_mobile.jpg';
+import image1Mobile from '../assets/images/cabin_left_swivel_window_1792317845512.jpg';
+import image2Mobile from '../assets/images/explorer_trekker_left_1792319323804.jpg';
+import image3Mobile from '../assets/images/writer_night_left_1792319322492.jpg';
 
 import { PortfolioPage } from '../components/Header';
 
@@ -34,11 +34,11 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 0,
     label: '01 Developer',
-    tag: 'Software Developer & Writer',
-    act: 'Genesis · Act 01',
-    headline: 'Turning structured logic into living experiences.',
-    body: 'I like to build web apps for people and businesses. Looking for a web app for a personal portfolio or your business? Check out my work samples here.',
-    ctaText: 'Check out my work samples here',
+    tag: 'Software developer | Writer | Experience Designer',
+    act: '',
+    headline: 'Creative Technologist',
+    body: 'I like building web apps for businesses and portfolios.',
+    ctaText: 'Check out my work samples',
     ctaPath: 'projects',
     theme: 'yellow',
     dotColor: 'bg-[#eab308]',
@@ -55,10 +55,10 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 1,
     label: '02 Explorer',
-    tag: 'Adventurer & Explorer',
-    act: 'Expedition · Act 02',
-    headline: 'Walking the ridgelines, mapping quiet trails.',
-    body: 'An avid trekker and badminton player. From Himalayan passes to badminton rallies, exploration feeds the rhythm of my work.',
+    tag: 'Traveler | Outdoor Sports Enthusiast',
+    act: '',
+    headline: 'Adventurer & Fitness Enthusiast',
+    body: 'From high-altitude Himalayan passes to fast badminton rallies, exploration feeds the rhythm of my thinking and creative work.',
     ctaText: 'Explore my journeys',
     ctaPath: 'journal',
     theme: 'green',
@@ -76,15 +76,15 @@ export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 2,
     label: '03 Writer',
-    tag: 'Midnight Writer & Thinker',
-    act: 'Nocturne · Act 03',
-    headline: 'Words woven in the quiet hours of night.',
-    body: 'Late night reflections, tech essays, and storybook chronicles. Capturing the nuances between lines of code.',
+    tag: 'Stories | Reflections | Experiences',
+    act: '',
+    headline: 'Midnight Writer & Thinker',
+    body: 'Late night reflections, tech essays, and storybook chronicles. Capturing the nuances and quiet spaces between lines of code.',
     ctaText: 'Read my journal',
     ctaPath: 'journal',
     theme: 'red',
     dotColor: 'bg-[#dc2626]',
-    activeBtnClass: 'bg-[#18181b] text-red-500 border border-red-500/40 shadow-sm font-semibold',
+    activeBtnClass: 'bg-[#dc2626] text-white shadow-sm font-semibold',
     borderClass: 'border-l-[#dc2626]',
     tagClass: 'bg-red-500/15 text-red-900 border border-red-500/30',
     darkTagClass: 'bg-red-500/20 text-white border border-red-400/50 shadow-sm',
