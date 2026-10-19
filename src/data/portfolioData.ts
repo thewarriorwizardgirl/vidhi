@@ -17,7 +17,8 @@ export interface HeroSlide {
   body: string;
   ctaText: string;
   ctaPath: PortfolioPage;
-  theme: 'yellow' | 'green' | 'red';
+  externalUrl?: string;
+  theme: 'yellow' | 'green' | 'teal' | 'red';
   dotColor: string;
   activeBtnClass: string;
   borderClass: string;
@@ -38,11 +39,11 @@ export const HERO_SLIDES: HeroSlide[] = [
     act: '',
     headline: 'Creative Technologist',
     body: 'I like building web apps for businesses and portfolios.',
-    ctaText: 'Check out my work samples',
+    ctaText: 'Checkout My Work',
     ctaPath: 'projects',
     theme: 'yellow',
     dotColor: 'bg-[#eab308]',
-    activeBtnClass: 'bg-[#eab308] text-[#1e1b18] shadow-sm font-semibold',
+    activeBtnClass: 'bg-amber-500/15 text-stone-900 dark:text-white border-2 border-amber-500 shadow-sm font-semibold',
     borderClass: 'border-l-[#eab308]',
     tagClass: 'bg-amber-500/15 text-amber-900 border border-amber-500/30',
     darkTagClass: 'bg-amber-500/20 text-white border border-amber-400/50 shadow-sm',
@@ -61,13 +62,13 @@ export const HERO_SLIDES: HeroSlide[] = [
     body: 'From high-altitude Himalayan passes to fast badminton rallies, exploration feeds the rhythm of my thinking and creative work.',
     ctaText: 'Explore my journeys',
     ctaPath: 'journal',
-    theme: 'green',
-    dotColor: 'bg-[#16a34a]',
-    activeBtnClass: 'bg-[#16a34a] text-white shadow-sm font-semibold',
-    borderClass: 'border-l-[#16a34a]',
-    tagClass: 'bg-green-600/15 text-green-900 border border-green-600/30',
-    darkTagClass: 'bg-green-500/20 text-white border border-green-400/50 shadow-sm',
-    btnClass: 'bg-[#16a34a] hover:bg-[#15803d] text-white',
+    theme: 'teal',
+    dotColor: 'bg-[#0d9488]',
+    activeBtnClass: 'bg-teal-500/15 text-stone-900 dark:text-white border-2 border-teal-500 shadow-sm font-semibold',
+    borderClass: 'border-l-[#0d9488]',
+    tagClass: 'bg-teal-600/15 text-teal-900 border border-teal-600/30',
+    darkTagClass: 'bg-teal-500/20 text-white border border-teal-400/50 shadow-sm',
+    btnClass: 'bg-[#0d9488] hover:bg-[#0f766e] text-white',
     bgImage: explorerRightBg,
     fallbackImage: explorerRightBg,
     bgImageMobile: image2Mobile,
@@ -82,9 +83,10 @@ export const HERO_SLIDES: HeroSlide[] = [
     body: 'Late night reflections, tech essays, and storybook chronicles. Capturing the nuances and quiet spaces between lines of code.',
     ctaText: 'Read my journal',
     ctaPath: 'journal',
+    externalUrl: 'https://journal-aggarwalvidhi.netlify.app/',
     theme: 'red',
     dotColor: 'bg-[#dc2626]',
-    activeBtnClass: 'bg-[#dc2626] text-white shadow-sm font-semibold',
+    activeBtnClass: 'bg-rose-500/15 text-stone-900 dark:text-white border-2 border-rose-500 shadow-sm font-semibold',
     borderClass: 'border-l-[#dc2626]',
     tagClass: 'bg-red-500/15 text-red-900 border border-red-500/30',
     darkTagClass: 'bg-red-500/20 text-white border border-red-400/50 shadow-sm',

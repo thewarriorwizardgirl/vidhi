@@ -51,22 +51,22 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({ onNavigate, dark
 
   return (
     <div
-      className={`w-full flex-grow flex items-center justify-center p-3 sm:p-5 md:p-7 lg:p-8 select-none transition-colors duration-300 ${
-        darkMode ? 'bg-[#282623]' : 'bg-[#f7f5ef]'
+      className={`w-full flex-grow flex items-center justify-center p-3 sm:p-5 md:p-7 lg:p-8 select-none transition-colors duration-300 font-sans ${
+        darkMode ? 'bg-black' : 'bg-[#f7f5ef]'
       }`}
     >
       {/* Screen Outer Frame Border */}
       <div
         className={`w-full max-w-[1520px] h-[calc(100vh-8.5rem)] min-h-[580px] rounded-3xl p-3 md:p-4 border relative flex flex-col justify-center transition-all duration-300 ${
           darkMode
-            ? 'bg-[#33302c] border-[#444038] shadow-[0_8px_30px_rgba(0,0,0,0.25)]'
+            ? 'bg-black border-stone-800 shadow-[0_8px_30px_rgba(0,0,0,0.9)]'
             : 'bg-white border-[#ede9e1] shadow-[0_8px_30px_rgba(0,0,0,0.06)]'
         }`}
       >
         {/* Slider Viewport */}
         <div
           className={`relative w-full h-full overflow-hidden rounded-2xl transition-colors ${
-            darkMode ? 'bg-[#262421]' : 'bg-stone-100'
+            darkMode ? 'bg-black' : 'bg-stone-100'
           }`}
         >
           {/* Slide Content: All Carousel Slides Rendered in the Diary Format */}
@@ -83,7 +83,7 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({ onNavigate, dark
             aria-label="Previous Slide"
             className={`group absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all duration-200 active:scale-95 hover:scale-105 backdrop-blur-md cursor-pointer ${
               darkMode
-                ? 'bg-[#3a3630]/95 hover:bg-[#454038] text-stone-200 border-[#4d4840] shadow-md'
+                ? 'bg-stone-900/90 hover:bg-stone-800 text-white border-stone-700 shadow-md'
                 : 'bg-white/95 hover:bg-white text-stone-800 border-stone-200/90 shadow-lg hover:shadow-xl'
             }`}
           >
@@ -95,7 +95,7 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({ onNavigate, dark
             aria-label="Next Slide"
             className={`group absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all duration-200 active:scale-95 hover:scale-105 backdrop-blur-md cursor-pointer ${
               darkMode
-                ? 'bg-[#3a3630]/95 hover:bg-[#454038] text-stone-200 border-[#4d4840] shadow-md'
+                ? 'bg-stone-900/90 hover:bg-stone-800 text-white border-stone-700 shadow-md'
                 : 'bg-white/95 hover:bg-white text-stone-800 border-stone-200/90 shadow-lg hover:shadow-xl'
             }`}
           >
@@ -107,7 +107,7 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({ onNavigate, dark
             <div
               className={`flex items-center gap-1.5 md:gap-2 backdrop-blur-xl p-1.5 rounded-full shadow-lg border transition-colors ${
                 darkMode
-                  ? 'bg-[#33302c]/95 border-[#45413a]'
+                  ? 'bg-stone-950/95 border-stone-800'
                   : 'bg-white/95 border-stone-200/80'
               }`}
             >
@@ -121,13 +121,19 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({ onNavigate, dark
                       isActive
                         ? slide.activeBtnClass
                         : darkMode
-                        ? 'bg-[#3d3933] text-stone-200 hover:text-white hover:bg-[#47433b]'
+                        ? 'bg-stone-900 text-stone-200 hover:text-white hover:bg-stone-800'
                         : 'bg-stone-100 text-stone-600 hover:text-stone-900 hover:bg-stone-200'
                     }`}
                   >
-                    {idx === 0 && <Terminal className="w-3.5 h-3.5" />}
-                    {idx === 1 && <Footprints className="w-3.5 h-3.5" />}
-                    {idx === 2 && <PenTool className="w-3.5 h-3.5" />}
+                    {idx === 0 && (
+                      <Terminal className="w-3.5 h-3.5 shrink-0 text-amber-500" />
+                    )}
+                    {idx === 1 && (
+                      <Footprints className="w-3.5 h-3.5 shrink-0 text-teal-600 dark:text-teal-400" />
+                    )}
+                    {idx === 2 && (
+                      <PenTool className="w-3.5 h-3.5 shrink-0 text-rose-600 dark:text-rose-400" />
+                    )}
                     <span className="hidden xs:inline">{slide.label}</span>
                     <span className="xs:hidden">0{idx + 1}</span>
                   </button>

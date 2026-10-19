@@ -9,9 +9,9 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onNavigate, darkMode = false }) => {
   return (
     <footer
-      className={`w-full py-4 border-t transition-colors duration-300 select-none ${
+      className={`w-full py-4 border-t transition-colors duration-300 select-none font-sans ${
         darkMode
-          ? 'bg-[#282623] border-[#3d3934] text-stone-400'
+          ? 'bg-black border-stone-800 text-stone-400'
           : 'bg-[#f7f5ef] border-stone-200/80 text-stone-500'
       }`}
     >

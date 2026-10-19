@@ -93,15 +93,15 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
 
   return (
     <div
-      className={`w-full flex-grow flex items-center justify-center p-4 sm:p-6 lg:p-8 select-none min-h-[calc(100vh-8.5rem)] transition-colors duration-300 ${
-        darkMode ? 'bg-[#282623]' : 'bg-[#f7f5ef]'
+      className={`w-full flex-grow flex items-center justify-center p-4 sm:p-6 lg:p-8 select-none min-h-[calc(100vh-8.5rem)] transition-colors duration-300 font-sans ${
+        darkMode ? 'bg-black' : 'bg-[#f7f5ef]'
       }`}
     >
       {/* Outer Card Frame */}
       <div
-        className={`w-full max-w-2xl rounded-3xl p-8 sm:p-12 border relative text-center space-y-6 transition-all duration-300 ${
+        className={`w-full max-w-2xl rounded-3xl p-8 sm:p-12 border relative text-center space-y-6 transition-all duration-300 font-sans ${
           darkMode
-            ? 'bg-[#33302c] border-[#444038] text-[#f5f0e8] shadow-[0_8px_30px_rgba(0,0,0,0.25)]'
+            ? 'bg-[#181614] border-stone-800 text-white shadow-[0_8px_30px_rgba(0,0,0,0.8)]'
             : 'bg-white border-[#ede9e1] text-stone-900 shadow-[0_8px_30px_rgba(0,0,0,0.05)]'
         }`}
       >
@@ -119,7 +119,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
         <div className="space-y-2">
           <h1
             className={`text-3xl sm:text-4xl font-bold tracking-tight font-sans ${
-              darkMode ? 'text-[#f5f0e8]' : 'text-stone-900'
+              darkMode ? 'text-white' : 'text-stone-900'
             }`}
           >
             {meta.title}
@@ -138,7 +138,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
 
         {/* Description */}
         <p
-          className={`text-sm sm:text-base leading-relaxed max-w-md mx-auto font-serif ${
+          className={`text-sm sm:text-base leading-relaxed max-w-md mx-auto font-sans ${
             darkMode ? 'text-[#d6d0c4]' : 'text-stone-600'
           }`}
         >
@@ -151,7 +151,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
             <div
               className={`p-4 sm:p-5 rounded-2xl border space-y-2.5 transition-colors ${
                 darkMode
-                  ? 'bg-[#3c3933] border-[#4a463e]'
+                  ? 'bg-[#12100e] border-stone-800'
                   : 'bg-[#faf8f4] border-stone-200/90'
               }`}
             >
@@ -164,7 +164,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
                   <LinkIcon className="w-3.5 h-3.5 text-amber-400" />
                   <span>{meta.urlLabel}</span>
                 </label>
-                <span className={`text-[11px] font-mono ${darkMode ? 'text-stone-400' : 'text-stone-400'}`}>
+                <span className={`text-[11px] font-sans ${darkMode ? 'text-stone-400' : 'text-stone-400'}`}>
                   URL Placeholder
                 </span>
               </div>
@@ -175,9 +175,9 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
                   value={meta.urlValue}
                   onChange={(e) => meta.onUrlChange && meta.onUrlChange(e.target.value)}
                   placeholder={meta.urlPlaceholder}
-                  className={`flex-1 border rounded-xl px-3.5 py-2 text-xs sm:text-sm font-mono shadow-2xs focus:outline-none focus:border-amber-400 transition-colors ${
+                  className={`flex-1 border rounded-xl px-3.5 py-2 text-xs sm:text-sm font-sans shadow-2xs focus:outline-none focus:border-amber-400 transition-colors ${
                     darkMode
-                      ? 'bg-[#2b2824] border-[#4d4840] text-amber-200 placeholder-stone-500'
+                      ? 'bg-[#181614] border-stone-700 text-amber-200 placeholder-stone-500'
                       : 'bg-white border-stone-200 text-stone-800 placeholder-stone-400'
                   }`}
                 />
