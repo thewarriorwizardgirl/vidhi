@@ -102,6 +102,31 @@ body {
   background-position: 0px 0px, 8px 8px;
 }
 
+/* Authentic Evident Parchment Texture for Project Cards (Warm Golden Antique Vellum) */
+.parchment-card {
+  background-color: #f7eed8;
+  background-image: 
+    radial-gradient(ellipse at 25% 25%, rgba(255, 253, 246, 0.8) 0%, rgba(247, 237, 212, 0.45) 50%, rgba(236, 220, 188, 0.85) 100%),
+    linear-gradient(135deg, #f9f3e3 0%, #f4e7ca 35%, #faeed7 65%, #ebdabb 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.09'/%3E%3C/svg%3E");
+  box-shadow: 
+    inset 0 0 26px rgba(175, 130, 65, 0.22),
+    inset 0 0 4px rgba(150, 105, 45, 0.16),
+    0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: #d3be97;
+}
+
+/* Evident Pure White Parchment for Diary Book Spread (Parchment Paper Grain + Crisp White Illumination) */
+.parchment-white-spread {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(circle at 50% 40%, #ffffff 50%, #fbf8f0 85%, #f4ece0 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.065'/%3E%3C/svg%3E");
+  box-shadow:
+    inset 0 0 35px rgba(210, 190, 160, 0.32),
+    inset 0 0 6px rgba(195, 175, 140, 0.2);
+}
+
 /* Custom scrollbars */
 ::-webkit-scrollbar {
   width: 6px;

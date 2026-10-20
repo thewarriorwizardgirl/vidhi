@@ -33,33 +33,23 @@ export const Header: React.FC<HeaderProps> = ({
       }`}
     >
       <div className="h-16 sm:h-20 w-full px-2 sm:px-6 lg:px-10 flex items-center justify-between max-w-[1600px] mx-auto gap-1 sm:gap-4">
-        {/* Brand Name Lockup - Adaptive on mobile to prevent squishing */}
+        {/* Brand Name Lockup - Vidhi Aggarwal with no subheading */}
         <button
           onClick={() => onNavigate('home')}
-          className="flex flex-col text-left group cursor-pointer focus-visible:outline-none shrink-0"
+          className="flex items-center gap-1.5 sm:gap-2 text-left group cursor-pointer focus-visible:outline-none shrink-0"
         >
-          <div className="flex items-center gap-1 sm:gap-1.5">
-            <span className="font-sans font-bold text-amber-500 text-base sm:text-lg group-hover:text-amber-400 transition-colors">
-              VA
-            </span>
-            <span className={`text-xs sm:text-base font-normal ${darkMode ? 'text-stone-500' : 'text-stone-300'}`}>
-              /
-            </span>
-            <span
-              className={`font-sans text-xs sm:text-base lg:text-lg font-bold tracking-tight uppercase group-hover:text-amber-500 transition-colors ${
-                darkMode ? 'text-white' : 'text-stone-900'
-              }`}
-            >
-              <span className="hidden xs:inline">Vidhi </span>
-              <span className="hidden md:inline">Aggarwal</span>
-            </span>
-          </div>
+          <span className="font-sans font-bold text-amber-500 text-base sm:text-lg group-hover:text-amber-400 transition-colors">
+            VA
+          </span>
+          <span className={`text-xs sm:text-base font-normal ${darkMode ? 'text-stone-500' : 'text-stone-300'}`}>
+            /
+          </span>
           <span
-            className={`text-[9px] sm:text-[11px] tracking-wider uppercase font-semibold hidden lg:block ${
-              darkMode ? 'text-stone-300' : 'text-stone-500'
+            className={`font-sans text-sm sm:text-base lg:text-lg font-bold tracking-tight uppercase group-hover:text-amber-500 transition-colors ${
+              darkMode ? 'text-white' : 'text-stone-900'
             }`}
           >
-            Software Developer & Writer
+            Vidhi Aggarwal
           </span>
         </button>
 
